@@ -48,7 +48,7 @@
 
             function loadProducts(viewModel) {
                 axios
-                    .get("/products")
+                    .get("/products.json")
                     .then(function(response){
                         viewModel.setProducts(response.data)
                     })
