@@ -1,18 +1,28 @@
-function AppViewModel() {
+function Product(name,price) {
+    this.name = name;
+    this.price = price;
+}
+
+function AppViewModel(products = []) {
     let self = this;
-    self.products = ko.observableArray([]);
+    self.products = ko.observableArray(products);
     self.items = ko.observableArray([])
+
+    self.cartTotal = ko.computed(function(){
+        let total = 0;
+        self.items().forEach(item => total += item.lineTotal());
+        return total;
+    });
 
     self.addItem = function(product) {
         let existing = self
-            .items
-            .filter(function(item){ return item.productId == product.id});
+            .items()
+            .filter(item => item.product.name == product.name);
         if (existing.length > 0) {
             existing[0].increment();
         } else {
             self.items.push(new ItemViewModel(product))
         }
-        self.items.push(new ItemViewModel())
     }
 }
 
