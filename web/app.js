@@ -24,6 +24,16 @@ function AppViewModel(products = []) {
             self.items.push(new ItemViewModel(product))
         }
     }
+    
+    self.checkout = function() {
+        window.alert("You just wasted " +  self.cartTotal() + " bucks");
+        self.items.removeAll();
+    }
+
+    self.setProducts = function(products) {
+        self.products.removeAll();
+        products.forEach(p => self.products.push(p))
+    }
 }
 
 function ItemViewModel(product) {

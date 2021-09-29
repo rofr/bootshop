@@ -1,5 +1,5 @@
 
-You can host the static web using either nginx or as a spring boot application
+You can host the static web using either nginx or as a spring boot application.
 
 ## Serving static web using spring boot
 1. Create a spring boot application using initializer
