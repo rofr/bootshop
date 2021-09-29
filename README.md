@@ -3,10 +3,11 @@
 
 Services:
 
-1. Products - Rest Api serving products and prices
-2. Cart - Api for tracking the users cart in sess
-3. Gateway - Spring Cloud Gateway that routes requests based on url
-4. Web - static web site hosted in nginx
+* Products - Rest Api serving products and prices
+* Cart - Api for tracking the users cart in sess
+* Gateway - Spring Cloud Gateway that routes requests based on url
+* Web - static web site hosted in nginx
+* EurekaServer - service discovery
 
 
 ## Using redis as a session store for spring mvc
